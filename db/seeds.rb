@@ -26,7 +26,7 @@ Tag.create([
 
 Admin.create!(email: 'touiogawa@gmail.com', password: 'Toui1129')
 
-Customer.create!(name: "Exaple Customer",
+Customer.create!(family_name: "Exaple Customer",
              email: "example@railstutorial.org",
              password:                 "foobar",
              password_confirmation:    "foobar",
