@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-3 bg-light">
+      <h2>新規映画登録</h2>
+    </div>
+  </div>
+
+  <%= form_with(model: @movie, url: admin_movies_path) do |f| %>
+  <h5>
+    <table style = "width:1000px; margin:30px;">
+      <tbody class= "border-bottom border-info">
+        <tr>
+          <td>
+            <h4>
+              タイトル<%= f.text_field :title, style: "margin-left:30px;" %>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5>
+              上映日<%= f.text_field :day, style: "margin-left:66px;"  %>
+            </h5>
+            <h5>
+              製作国<%= f.text_field :country, style: "margin-left:66px;"  %>
+            </h5>
+            <h5>
+              上映時間<%= f.text_field :time, style: "margin-left:46px;"  %>
+            </h5>
+            <h5>
+            あらすじ<%= f.text_area :body, style: "margin-left:46px;"  %>
+            </h5>
+          </td>
+        </td>
+      </tbody>
+    </table>
+    <div class="check_box">
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+        <td class='form-check'>
+          <%= tag.label do %>
+            <%= tag.check_box %>
+            <%= tag.text %>
+          <% end %>
+        </td>
+      <% end %>
+    </div>
+    <%= f.submit '投稿' %>
+    <% end %>
+  </h5>
+</div>
