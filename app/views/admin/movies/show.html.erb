@@ -1,28 +1,33 @@
-
-              タイトル：<%= @movie.title %>
-            </h2>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <h5>
-              上映日時：<%= @movie.day %>/
-              製作国：<%= @movie.country %>/
-              上映時間：<%= @movie.time %>/
-              ジャンル：
-              <% @movie.tags.each do |tag| %>
-                <%= tag.name %>
-              <% end %>
-            </h5>
-          </td>
-        </tr>
+<div class="container">
+  <table style = "margin:30px;">
+    <tbody class= "border-bottom border-info">
+      <tr>
+        <td>
+          <h2>
+            タイトル：<%= @movie.title %>
+          </h2>
+        </td>
+      </tr>
+      <tr>
         <td>
           <h5>
-            あらすじ：<%= @movie.body %>
+            上映日時：<%= @movie.day %>/
+            製作国：<%= @movie.country %>/
+            上映時間：<%= @movie.time %>/
+            ジャンル：
+            <% @movie.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
           </h5>
         </td>
-      </tbody>
-    </table>
+      </tr>
+      <td>
+        <h5>
+          あらすじ：<%= @movie.body %>
+        </h5>
+      </td>
+    </tbody>
+  </table>
     <div style="margin-left:29px;">
       <%= link_to "削除", admin_movie_path(@movie.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
       |
