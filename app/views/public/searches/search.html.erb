@@ -8,7 +8,7 @@
         <% @customers.each do |customer| %>
           <tr>
             <h4>
-              <td>苗字：<%= link_to customer.family_name, public_path(customer.id) %></td>
+              <td>苗字：<%= customer.family_name %></td>
               <td>名前：<%= customer.first_name %></td>
             </h4>
           </tr>
