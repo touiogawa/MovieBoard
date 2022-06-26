@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -81,10 +82,6 @@
     </nav>
     </header>
     <%= yield %>
-    <footer class="fixed-bottom bg-info text-white" style="height:50px;">
-      <div class="container">
-        ようこそMovieBoardへ！
-      </div>
-    </footer>
+
   </body>
 </html>

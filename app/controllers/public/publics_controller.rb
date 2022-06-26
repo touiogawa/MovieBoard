@@ -2,7 +2,7 @@ class Public::PublicsController < ApplicationController
   before_action :admin_customer, only: :destroy
 
   def show
-    @customers = Customer.all
+    @customer = Customer.find(params[:id])
   end
 
   def edit

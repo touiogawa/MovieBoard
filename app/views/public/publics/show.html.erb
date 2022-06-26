@@ -1,20 +1,22 @@
 <div class="container">
   <h1>ユーザー情報詳細</h1>
   <div style = "margin:40px;">
-    <% @customers.each do |customer| %>
+
     <h3>
       <div>
-        <div style= "margin:20px;">苗字：<%= customer.family_name %></div>
-        <div style= "margin:20px;">氏名：<%= customer.first_name %></div>
-        <div style= "margin:20px;">メールアドレス：<%= customer.email %></div>
+        <div style= "margin:20px;">苗字：<%= @customer.family_name %></div>
+        <div style= "margin:20px;">氏名：<%= @customer.first_name %></div>
+        <div style= "margin:20px;">メールアドレス：<%= @customer.email %></div>
       </div>
     </h3>
-    <li class="list-unstyled nav-item m-3">
-      <%= link_to "プロフィール編集", edit_public_path(customer.id), class: 'btn btn-outline-success btn-lg font-weight-bold text-dark' %>
-    </li>
-    <li class="list-unstyled nav-item m-3">
-      <%= link_to "退会", confirm_unsubscribe_path(customer.id), class: 'btn btn-outline-danger btn-lg font-weight-bold text-dark' %>
-    </li>
+
+    <% if current_customer.id == @customer.id %>
+      <li class="list-unstyled nav-item m-3">
+        <%= link_to "プロフィール編集", edit_public_path(@customer.id), class: 'btn btn-outline-success btn-lg font-weight-bold text-dark' %>
+      </li>
+      <li class="list-unstyled nav-item m-3">
+        <%= link_to "退会", confirm_unsubscribe_path(@customer.id), class: 'btn btn-outline-danger btn-lg font-weight-bold text-dark' %>
+      </li>
     <% end %>
   </div>
 </div>

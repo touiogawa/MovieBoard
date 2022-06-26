@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get "search" => "searches#search"
     resources :movies, only: [:index, :show,] do
-      resources :movie_comments, only: [:create]
+      resources :movie_comments, only: [:create,]
     end
     resources :publics, only: [:show, :edit, :update, :destroy]
     resource :relationships, only: [:create, :destroy]
